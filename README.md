@@ -4,7 +4,7 @@ Finds local business leads, by city, using the [Google Places API (New)](https:/
 
 Given a city, it searches a set of local business categories (salons, clinics, restaurants, shops, offices, ...), and flags each business as a lead based on its web presence: no website at all, a website without HTTPS, or an already-established website. That makes it useful for freelance dev/IT prospecting — businesses with weak or no web presence are the strongest leads.
 
-Originally built for Iago's freelance work around Barbacena, MG, Brazil, but the city is a CLI parameter, not hardcoded — it works for any city Google Places covers.
+Originally built for freelance prospecting around Barbacena, MG, Brazil, but the city is a CLI parameter, not hardcoded — it works for any city Google Places covers.
 
 ## How it works
 
