@@ -1,2 +1,3 @@
-def main() -> None:
-    print("Hello from leadfinder!")
+from .cli import main
+
+__all__ = ["main"]
