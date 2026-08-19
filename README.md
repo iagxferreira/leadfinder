@@ -49,3 +49,7 @@ make check   # lint + test
 ```
 
 Run `make help` for the full list of targets.
+
+## License
+
+[MIT](LICENSE)
