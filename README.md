@@ -1,14 +1,19 @@
 # leadfinder
 
-A local lead-generation tool that finds small businesses without a website (or with an outdated one) as freelance dev/IT prospects.
+Finds local business leads, by city, using the [Google Places API (New)](https://developers.google.com/maps/documentation/places/web-service/op-overview) — no scraping, just the official API.
 
-Built for Iago's freelance work around Barbacena, MG, Brazil, but the target city is a parameter, not hardcoded.
+Given a city, it searches a set of local business categories (salons, clinics, restaurants, shops, offices, ...), and flags each business as a lead based on its web presence: no website at all, a website without HTTPS, or an already-established website. That makes it useful for freelance dev/IT prospecting — businesses with weak or no web presence are the strongest leads.
+
+Originally built for Iago's freelance work around Barbacena, MG, Brazil, but the city is a CLI parameter, not hardcoded — it works for any city Google Places covers.
 
 ## How it works
 
-1. Query the [Google Places API (New)](https://developers.google.com/maps/documentation/places/web-service/op-overview) for local business categories (salons, clinics, restaurants, shops, offices, ...) in a given city.
-2. Flag businesses that have no `website` field, or one that looks outdated (no HTTPS, not mobile-friendly).
-3. Output a prioritized CSV of leads for outreach (WhatsApp-first, since that outperforms email/cold LinkedIn in this market).
+1. Query Places API (New) Text Search for each category in the given city.
+2. Dedupe results across categories (a place matched by more than one category search is kept once, under the first category it was found under).
+3. Classify each business by lead signal: `no_website`, `no_https`, or `has_website`.
+4. Output a CSV — name, category, address, phone, website, signal, rating, Google Maps link — sorted with the strongest leads (`no_website`) first.
+
+Outreach is meant to be WhatsApp-first, since that outperforms email/cold LinkedIn in the Brazilian local-business market this was built for.
 
 ## Setup
 

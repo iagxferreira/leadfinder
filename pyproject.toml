@@ -1,7 +1,7 @@
 [project]
 name = "leadfinder"
 version = "0.1.0"
-description = "Add your description here"
+description = "Find local business leads, by city, using the Google Places API"
 readme = "README.md"
 authors = [
     { name = "Iago Ferreira", email = "iago-ferreira@outlook.com" }
