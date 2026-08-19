@@ -1,0 +1,14 @@
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+
+# uv-managed virtual environment
+.venv/
+
+# Secrets
+.env
+
+# Output data
+*.csv

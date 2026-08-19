@@ -1,0 +1,26 @@
+[project]
+name = "leadfinder"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Iago Ferreira", email = "iago-ferreira@outlook.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "googlemaps>=4.10.0",
+    "python-dotenv>=1.2.3",
+]
+
+[project.scripts]
+leadfinder = "leadfinder:main"
+
+[build-system]
+requires = ["uv_build>=0.12.5,<0.13.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+    "ruff>=0.16.3",
+]
