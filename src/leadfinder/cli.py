@@ -11,6 +11,7 @@ from .signals import SIGNAL_PRIORITY, lead_signal
 
 CSV_FIELDS = [
     "name",
+    "category",
     "address",
     "phone",
     "website",
@@ -33,10 +34,11 @@ def parse_args(argv: list[str]) -> argparse.Namespace:
     return parser.parse_args(argv)
 
 
-def place_to_row(place: dict) -> dict:
+def place_to_row(place: dict, category: str) -> dict:
     website = place.get("websiteUri")
     return {
         "name": place.get("displayName", {}).get("text", ""),
+        "category": category,
         "address": place.get("formattedAddress", ""),
         "phone": place.get("internationalPhoneNumber", ""),
         "website": website or "",
@@ -57,7 +59,7 @@ def find_leads(city: str, categories: list[str], api_key: str) -> list[dict]:
             if not place_id or place_id in seen_ids:
                 continue
             seen_ids.add(place_id)
-            rows.append(place_to_row(place))
+            rows.append(place_to_row(place, category))
 
     rows.sort(key=lambda row: SIGNAL_PRIORITY[row["signal"]])
     return rows
