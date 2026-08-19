@@ -3,9 +3,7 @@ name = "leadfinder"
 version = "0.1.0"
 description = "Find local business leads, by city, using the Google Places API"
 readme = "README.md"
-authors = [
-    { name = "Iago Ferreira", email = "iago-ferreira@outlook.com" }
-]
+license = "MIT"
 requires-python = ">=3.12"
 dependencies = [
     "python-dotenv>=1.2.3",
