@@ -25,14 +25,20 @@ You'll need a Google Cloud project with the **Places API (New)** enabled and bil
 ## Usage
 
 ```bash
+make run CITY="Barbacena, MG, Brasil"
+# or directly:
 uv run leadfinder --city "Barbacena, MG, Brasil"
 ```
 
-(Script not yet implemented — this documents the intended interface.)
+Optional flags: `CATEGORIES="padaria,salão de beleza"` to override the default category list, `OUTPUT=leads.csv` to change the output path.
 
 ## Development
 
 ```bash
-uv run ruff check .   # lint
-uv run pytest         # test
+make lint    # ruff check
+make format  # ruff format
+make test    # pytest
+make check   # lint + test
 ```
+
+Run `make help` for the full list of targets.
