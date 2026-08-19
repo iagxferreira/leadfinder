@@ -1,0 +1,16 @@
+DEFAULT_CATEGORIES = [
+    "salão de beleza",
+    "barbearia",
+    "clínica",
+    "dentista",
+    "restaurante",
+    "padaria",
+    "mercado",
+    "farmácia",
+    "loja de roupas",
+    "pet shop",
+    "academia",
+    "oficina mecânica",
+    "escritório de advocacia",
+    "contabilidade",
+]
