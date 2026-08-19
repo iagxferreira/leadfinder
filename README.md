@@ -1,19 +1,21 @@
 # leadfinder
 
-Finds local business leads, by city, using the [Google Places API (New)](https://developers.google.com/maps/documentation/places/web-service/op-overview) — no scraping, just the official API.
+Find local business leads, in any city, using the official [Google Places API (New)](https://developers.google.com/maps/documentation/places/web-service/op-overview) — no scraping.
 
-Given a city, it searches a set of local business categories (salons, clinics, restaurants, shops, offices, ...), and flags each business as a lead based on its web presence: no website at all, a website without HTTPS, or an already-established website. That makes it useful for freelance dev/IT prospecting — businesses with weak or no web presence are the strongest leads.
+## What it does
 
-Originally built for local freelance prospecting in Brazil, but the city is a CLI parameter, not hardcoded — it works for any city Google Places covers.
+- Searches local business categories (salons, clinics, restaurants, shops, offices, and more) in a city you choose
+- Flags each business as a lead by web presence: no website, no HTTPS, or already online
+- Outputs a ranked CSV, strongest leads first — ideal for freelance dev/IT prospecting, where weak or missing web presence is the strongest signal
 
 ## How it works
 
 1. Query Places API (New) Text Search for each category in the given city.
-2. Dedupe results across categories (a place matched by more than one category search is kept once, under the first category it was found under).
+2. Dedupe results across overlapping categories.
 3. Classify each business by lead signal: `no_website`, `no_https`, or `has_website`.
-4. Output a CSV — name, category, address, phone, website, signal, rating, Google Maps link — sorted with the strongest leads (`no_website`) first.
+4. Output a CSV — name, category, address, phone, website, signal, rating, Google Maps link — sorted with the strongest leads first.
 
-Outreach is meant to be WhatsApp-first, since that outperforms email/cold LinkedIn in the Brazilian local-business market this was built for.
+**Tip:** for local Brazilian businesses, WhatsApp outreach consistently outperforms email or cold LinkedIn.
 
 ## Setup
 
